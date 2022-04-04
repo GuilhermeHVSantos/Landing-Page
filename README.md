@@ -18,14 +18,17 @@ The idea of this project is to learn and the develop skills for front-end and ad
 ## Screenshots
 
 - Hero
+
 ![App Screenshot](https://i.ibb.co/FWDJFRp/screenshot-profile.jpg)
 
 
-- Testimonials Carousel
+- Testimonials Responsive Carousel
+
 ![App Screenshot](https://i.ibb.co/BZXxvB0/carousel.gif)
 
 
 - Contact Section 
+
 ![App Screenshot](https://i.ibb.co/0C4TjQR/modal.gif)
 
 
