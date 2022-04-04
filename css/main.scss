@@ -1,0 +1,548 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+
+// propriedades para cores repetidas no site
+:root {
+    --primary-color: #39c9c9;
+}
+
+body {
+    background: #F2f2f2;
+    margin: 0;
+    font-family: 'Poppins';
+}
+
+
+// Propriedades "nested" pois somente serão aplicadas para, ex. o container que está dentro da navbar, e não os demais do resto do body
+.navbar {
+    background: white;
+    padding: 1em;
+
+    .logo {
+        text-decoration: none;
+        font-weight: bold;
+        color: black;
+        font-size: 1.2em;
+
+        span {
+            color: var(--primary-color);
+        }
+        
+    }
+    
+    nav { 
+        display: none;
+    }
+    
+    .container {
+        display: flex;
+        place-content: space-between;
+    }
+    
+    .mobile-menu{
+        cursor: pointer;
+    }
+}
+
+a {
+    color: #444444;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+section {
+    padding: 5em 2em;
+}
+
+.hero { 
+    text-align: center;
+}
+
+.left-col{
+
+    .subhead {
+        text-transform: uppercase;
+        font-weight: bold;
+        color: gray;
+        letter-spacing: .3em;
+    }
+
+    h1{
+        font-size: 2.5em;
+        line-height: 1.3em;
+        margin-top: .2em;
+    }
+
+    .primary-cta {
+        background: var(--primary-color);
+        color: white;
+        text-decoration: none;
+        padding: .6em 1.3em;
+        font-size: 1.4em;
+        border-radius: 5em;
+        font-weight: bold;
+        display: inline-block;
+
+    }
+
+    .watch-video-cta {
+        display: block;
+        margin-top: 1em;
+
+        img {
+            margin-right: .5em;
+        }
+    }
+}
+
+.hero-img {
+    width: 70%;
+    margin-top: 3em;
+}
+
+section.features-section {
+    background: #20272E;
+    color: white;
+}
+
+ul.features-list {
+    margin: 0;
+    padding-left: .1em;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
+
+    li {
+        font-size: 1.1em;
+        margin-bottom: 1em;
+        margin-left: 2em;
+        position: relative;
+
+        &:before {
+            content: '';
+            left: -2em;
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-image: url('../assets/bullet.svg');
+            background-size: contain;
+            margin-right: .5em;
+        }
+    }
+
+}
+
+.features-section img {
+    display: none;
+}
+
+// testimonial feito estatico, mas deve ser feito como carousel
+.testimonials-section {
+    background: var(--primary-color);
+    color: white;
+    position: relative;
+
+    .glider {
+        padding: 40px 0px;
+    }
+
+        li {
+            background: #03a5a5;
+            text-align: center;
+            padding: 2em 1em;
+            width: 80%;
+            margin: 0 2em 5em;
+            border-radius: 1em;
+    
+            img {
+                width: 5em;
+                height: 5em;
+                border-radius: 50%;
+                border: 5px solid #03a5a5;
+                margin-top: -4.5em;
+            }
+        }
+
+}
+
+.glider-prev {
+
+    margin-left: 60px;
+}
+
+.glider-next {
+
+    margin-right: 60px;
+}
+
+
+h2 {
+    font-size: 2em;
+
+}
+
+label {
+    display: block;
+    font-size: 1.2em;
+    margin-bottom: .5em;
+}
+
+input, textarea {
+    width: 100%;
+    padding: .8em;
+    margin-bottom: 1em;
+    border: 1px solid gray;
+    border-radius: .3em;
+    box-sizing: border-box;
+}
+
+//diferente maneira de selecionar o botão, poderia ter usado a classe normalmente
+.send-message-cta {
+    background-color: var(--primary-color);
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 1.3em;
+    border: none;
+    border-radius: 5em;
+    display: inline-block;
+    padding: .8em 3em;
+    width: unset;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #03a5a5;
+        transition: 400ms;
+    }
+}
+
+//Mapa que aparece no final da pagina
+iframe {
+    width: 100%;
+    height: 300px;
+}
+
+nav.menu-btn {
+    display: block;
+}
+
+nav {
+    position: fixed;
+    z-index: 1;
+    width: 66%;
+    right: 0;
+    top: 0;
+    background: #20272E;
+    height: 100vh;
+    padding: 1em;
+
+    ul.primary-nav {
+        margin-top: 5em; 
+    }
+
+    li {
+
+        a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            padding: .5em;
+            font-size: 1.3em;
+            text-align: right;
+
+            &:hover {
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+//botão X para fechar o menu
+.mobile-menu-exit {
+    float: right;
+    margin: .5em;
+    cursor: pointer;
+}
+
+// Implementação do Modal
+.modal-container {
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,.5);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 2;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.modal-content {
+    position: relative;
+    font-size: 3em;
+    background: white;
+    width: 60%;
+    max-width: 800px;
+    min-width: 300px;
+    padding: 40px;
+    border: 10px solid var(--primary-color);
+    border-radius: 30px;
+}
+
+.btn-modal-exit {
+    position: absolute;
+    top: .5em;
+    left: 85%;
+    color: var(--primary-color);
+    background-color: white;
+    border: none;
+    font-size: 1em;
+    font-weight: bold;
+    border-radius: 5em;
+    margin-top: -.2em;
+    cursor: pointer;
+}
+
+.modal-container.show {
+    display: flex;
+}
+
+@keyframes modal {
+    from {
+        opacity: 0;
+        transform: translated3d(0, -60px,0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0,0);
+    }
+}
+
+.show .modal-content {
+    animation: modal .5s
+}
+
+
+@media only screen and (min-width: 768px) {
+
+    .mobile-menu, .mobile-menu-exit {
+        display: none;
+    }
+
+    .navbar .container {
+        display: grid;
+        grid-template-columns: 180px auto;
+        justify-content: unset;
+    }
+
+    .navbar nav {
+        display: flex;
+        justify-content: space-around;
+        background: none;
+        position: unset;
+        height: auto;
+        width: 100%;
+        padding: 0;
+
+        ul {
+            display: flex;
+        }
+
+        a {
+            color: black;
+            font-size: 1em;
+            padding: .1em 1em;
+        }
+
+        ul.primary-nav {
+            margin: 0;
+        }
+
+        li.current a {
+            font-weight: bold;
+        }
+
+        li.pre-order-cta a {
+            color: var(--primary-color);
+            border: 3px solid var(--primary-color);
+            font-weight: bold;
+            border-radius: 5em;
+            margin-top: -.2em;
+
+            &:hover {
+                background: var(--primary-color);
+                color: white;
+            }
+        }
+
+    
+
+    .testimonials-section {
+            li {
+                background: #03a5a5;
+                text-align: center;
+                padding: 2em 1em;
+                width: 70%;
+                margin: 0 2em 2em auto;
+                border-radius: 1em;
+    
+                img {
+                    width: 5em;
+                    height: 5em;
+                    border-radius: 50%;
+                    border: 5px solid #03a5a5;
+                    margin-top: -4.5em;
+                }
+            }
+    }
+}
+.btn-modal-exit {
+    position: absolute;
+    top: .5em;
+    left: 90%;
+}
+}
+
+@media only screen and (min-width: 1080px) {
+    .container {
+        width: 1080px;
+        margin: 0 auto;
+    }
+
+    section {
+        padding: 8em 4em;
+    }
+
+    .hero .container {
+        display: flex;
+        justify-content: space-between;
+        text-align: left;
+
+        .left-col {
+            margin: 3em 3em 0 3em;
+        
+            h1 {
+                font-size: 3em;
+                width: 90%;
+            }
+        }
+
+    }
+
+    .hero-img {
+        width: 40%;
+        margin-right: 6em;
+    }
+
+    .hero-cta {
+        display: flex;
+    }
+
+    .primary-cta {
+        margin-right: 1em;
+    }
+
+    ul.features-list {
+        display: block;
+        margin-left: 5em;
+
+        li {
+            font-size: 1.4em;
+
+            &:before {
+                width: 30px;
+                height: 30px;
+            }
+        }
+    }
+
+    .features-section {
+        position: relative;
+    }
+
+    .features-section img {
+        display: block;
+        position: absolute;
+        right: 0;
+        width: 400px;
+        bottom: -2em;
+    }
+
+    // Depoimentos que devem virar carrousel nessa resolução
+    .testimonials-section ul {
+        display: flex;
+
+        li {
+            margin: 0 1em;
+        }
+    }
+
+    .contact-section {
+        position: relative;
+
+        .container {
+            display: flex;
+        }
+
+    }
+    .contact-left {
+        width: 40%;
+
+    }
+    .contact-right {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 45%;
+        height: 100%;
+
+        iframe {
+            height: 100%;
+        }
+    }
+
+    .btn-modal-exit {
+        position: absolute;
+        top: .5em;
+        left: 92%;
+}
+}
+
+@media only screen and (min-width: 1450px) {
+    .features-section {
+
+        &:before {
+            content: '';
+            position: absolute;
+            width: 10%;
+            height: 20em;
+            background: var(--primary-color);
+            left: 0;
+            top: -4em;
+        }
+
+        &:after {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 20em;
+            background: url('../assets/dots.svg') no-repeat;
+            left: 4.5em;
+            top: 2em;
+        }
+    }
+
+    .btn-modal-exit {
+        position: absolute;
+        top: .5em;
+        left: 92%;
+}
+
+}
+
+
